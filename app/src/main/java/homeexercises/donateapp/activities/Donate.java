@@ -1,4 +1,4 @@
-package homeexercises.donateapp;
+package homeexercises.donateapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Donate extends AppCompatActivity {
+import homeexercises.donateapp.R;
+import homeexercises.donateapp.models.Donation;
+
+public class Donate extends Base {
 
     private Button donateButton;
     private RadioGroup paymentMethod;
@@ -89,25 +92,19 @@ public class Donate extends AppCompatActivity {
     {
 
         String method = paymentMethod.getCheckedRadioButtonId() == R.id.PayPal ? "PayPal" : "Direct";
-
-        int donatedAmount = amountPicker.getValue();
-        if(donatedAmount == 0){
+        int donatedAmount =  amountPicker.getValue();
+        if (donatedAmount == 0)
+        {
             String text = amountText.getText().toString();
-
-            if(!text.equals(""))
+            if (!text.equals(""))
                 donatedAmount = Integer.parseInt(text);
-
-        }//end of if
-
-        if(!targetAchieved){
-            totalDonated = totalDonated + donatedAmount;
-            targetAchieved = totalDonated >= 10000;
+        }
+        if (donatedAmount > 0)
+        {
+            newDonation(new Donation(donatedAmount, method));
             progressBar.setProgress(totalDonated);
-            String totalDonatedStr = "£" + totalDonated;
+            String totalDonatedStr = "$" + totalDonated;
             amountTotal.setText(totalDonatedStr);
-        }else{
-            Toast toast = Toast.makeText(this, "Target Exceeded!", Toast.LENGTH_SHORT);
-            toast.show();
         }
 
         Log.v("Donate", amountPicker.getValue() + " donated by " + method + "\nCurrent total " + totalDonated);
