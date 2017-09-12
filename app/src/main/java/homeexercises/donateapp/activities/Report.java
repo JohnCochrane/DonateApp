@@ -24,13 +24,6 @@ public class Report extends Base
 {
     ListView listView;
 
-//    static final String[] numbers = new String[] {
-//            "Amount, Pay method",
-//            "10,     Direct",
-//            "100,    PayPal",
-//            "1000,   Direct",
-//            "10,     PayPal",
-//            "5000,   PayPal"};
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -43,12 +36,12 @@ public class Report extends Base
         listView.setAdapter(adapter);
     }//end of OnCreate
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        //Inflate the menu; this adds item to the action bar if it is present
-        getMenuInflater().inflate(R.menu.menu_donate, menu);
-        return true;
-    }//end of Options Menu
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        //Inflate the menu; this adds item to the action bar if it is present
+//        getMenuInflater().inflate(R.menu.menu_donate, menu);
+//        return true;
+//    }//end of Options Menu
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -85,7 +78,7 @@ class DonationAdapter extends ArrayAdapter<Donation>
         TextView amountView = (TextView) view.findViewById(R.id.row_amount);
         TextView methodView = (TextView) view.findViewById(R.id.row_method);
 
-        amountView.setText("$" + donation.amount);
+        amountView.setText("£" + donation.amount);
         methodView.setText(donation.method);
 
         return view;

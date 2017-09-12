@@ -71,12 +71,12 @@ public class Donate extends Base {
 
     }//end of of onCreate
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_donate, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_donate, menu);
+//        return true;
+//    }
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -103,7 +103,7 @@ public class Donate extends Base {
         {
             newDonation(new Donation(donatedAmount, method));
             progressBar.setProgress(totalDonated);
-            String totalDonatedStr = "$" + totalDonated;
+            String totalDonatedStr = "£" + totalDonated;
             amountTotal.setText(totalDonatedStr);
         }
 
