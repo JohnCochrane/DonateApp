@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -31,7 +32,14 @@ public class Report extends AppCompatActivity
         listView = (ListView) findViewById(R.id.reportList);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, numbers);
         listView.setAdapter(adapter);
-    }
+    }//end of OnCreate
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Inflate the menu; this adds item to the action bar if it is present
+        getMenuInflater().inflate(R.menu.menu_donate, menu);
+        return true;
+    }//end of Options Menu
 
 
 }//end of class
