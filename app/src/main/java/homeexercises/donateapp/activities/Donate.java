@@ -30,8 +30,6 @@ public class Donate extends Base {
     private EditText amountText;
     private TextView amountTotal;
 
-    private int totalDonated = 0;
-    private boolean targetAchieved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +69,12 @@ public class Donate extends Base {
 
     }//end of of onCreate
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_donate, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_donate, menu);
+        return true;
+    }
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -109,6 +107,11 @@ public class Donate extends Base {
 
         Log.v("Donate", amountPicker.getValue() + " donated by " + method + "\nCurrent total " + totalDonated);
     }//end of donateMethod
+
+    @Override
+    public void reset(MenuItem item){
+
+    }//end of reset meni item
 
 
 }//end of class

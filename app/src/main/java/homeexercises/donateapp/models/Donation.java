@@ -12,4 +12,8 @@ public class Donation {
         this.amount = amount;
         this.method = method;
     }//constructor
+
+    public Donation(String method) {
+        this.method = method;
+    }
 }//end of Donation

@@ -36,12 +36,12 @@ public class Report extends Base
         listView.setAdapter(adapter);
     }//end of OnCreate
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        //Inflate the menu; this adds item to the action bar if it is present
-//        getMenuInflater().inflate(R.menu.menu_donate, menu);
-//        return true;
-//    }//end of Options Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        //Inflate the menu; this adds item to the action bar if it is present
+        getMenuInflater().inflate(R.menu.menu_donate, menu);
+        return true;
+    }//end of Options Menu
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
